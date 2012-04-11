@@ -1,29 +1,24 @@
+mixin field(type, name, label)
+	li
+		<label for="#{name}">#{label}</label>
+		if type == 'textarea'
+			textarea(name="#{name}", id="#{name}", rows=20)
+		else
+			input(type=type, name="#{name}", id="#{name}")
+
 include global/header
 
 form#addform(method="post")
 	div
 		ul
-			li
-				label Name :
-					input(type="text", name="name")
-			li
-				label Blurb :
-					input(type="text", name="blurb")
-			li
-				label Download (Windows) :
-					input(type="text", name="download-windows")
-			li
-				label Download (Mac) :
-					input(type="text", name="download-mac")
-			li
-				label Download (Other) :
-					input(type="text", name="download-other")
-			li
-				label Icon :
-					input(type="text", name="icon")
-			li
-				label Info :
-					textarea(name="info", rows=20)
+			mixin field('text', 'name', 'Name')
+			mixin field('text', 'blurb', 'Blurb')
+			mixin field('text', 'download-windows', 'Download (Windows)')
+			mixin field('text', 'download-mac', 'Download (Mac)')
+			mixin field('text', 'download-other', 'Download (Other)')
+			mixin field('text', 'icon', 'Icon')
+			mixin field('textarea', 'info', 'Info')
+
 		a.button#appsubmit() Submit
 
 include global/footer
