@@ -106,3 +106,6 @@ body {
   width: 800px;
   margin-left: auto;
 }
+#addform ul {
+  list-style: none;
+}

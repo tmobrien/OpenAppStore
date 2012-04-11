@@ -2,27 +2,28 @@ include global/header
 
 form#addform(method="post")
 	div
-		div
-			span Name :
-			input(type="text", name="name")
-		div
-			span Blurb :
-			input(type="text", name="blurb")
-		div
-			span Download (Windows) :
-			input(type="text", name="download-windows")
-		div
-			span Download (Mac) :
-			input(type="text", name="download-mac")
-		div
-			span Download (Other) :
-			input(type="text", name="download-other")
-		div
-			span Icon :
-			input(type="text", name="icon")
-		div
-			span Info :
-			textarea(name="info", rows=20)
+		ul
+			li
+				label Name :
+					input(type="text", name="name")
+			li
+				label Blurb :
+					input(type="text", name="blurb")
+			li
+				label Download (Windows) :
+					input(type="text", name="download-windows")
+			li
+				label Download (Mac) :
+					input(type="text", name="download-mac")
+			li
+				label Download (Other) :
+					input(type="text", name="download-other")
+			li
+				label Icon :
+					input(type="text", name="icon")
+			li
+				label Info :
+					textarea(name="info", rows=20)
 		a.button#appsubmit() Submit
 
 include global/footer

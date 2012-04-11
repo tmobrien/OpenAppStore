@@ -29,6 +29,7 @@ ArticleProvider.prototype.save = function(apps, callback) {
 	}
 	callback(null, apps);
 };
+
 /* Lets bootstrap with dummy data */
 new ArticleProvider().save([
 	{
