@@ -59,17 +59,24 @@ app.get('/', function(req,res) {
 	});
 });
 
-app.get('/blog/new', function(req, res) {
-
-	res.render('newblog.jade', { locals: {
-		title: 'New Post'
+app.get('/submitapp', function(req, res) {
+	res.render('newapp.jade', { locals: {
+		title: 'Add Application'
 	}});
 });
 
-app.post('/blog/new', function(req, res) {
+app.post('/submitapp', function(req, res) {
 	articleProvider.save({
-		title: req.param('title'),
-		body: req.param('body')
+		name : req.param('name'),
+		blurb: req.param('blurb'),
+		download: {
+			windows: req.param('download-windows'),
+			mac: req.param('download-mac'),
+			other: req.param('download-other'),
+		},
+		icon: req.param('icon'),
+		info: req.param('info'),
+
 	}, function( error, docs) {
 		res.redirect('/');
 	});

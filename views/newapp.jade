@@ -1,0 +1,25 @@
+form(method="post")
+	div
+		div
+			span Name :
+			input(type="text", name="name")
+		div
+			span Blurb :
+			input(type="text", name="blurb")
+		div
+			span Download (Windows) :
+			input(type="text", name="download-windows")
+		div
+			span Download (Mac) :
+			input(type="text", name="download-mac")
+		div
+			span Download (Other) :
+			input(type="text", name="download-other")
+		div
+			span Icon :
+			input(type="text", name="icon")
+		div
+			span Info :
+			textarea(name="info", rows=20)
+		#appsubmit
+			input(type="submit", value="Submit")
