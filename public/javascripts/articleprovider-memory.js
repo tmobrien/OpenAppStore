@@ -1,4 +1,4 @@
-var articleCounter = 1;
+
 ArticleProvider = function() {
 };
 ArticleProvider.prototype.dummyData = [];
@@ -26,24 +26,35 @@ ArticleProvider.prototype.save = function(apps, callback) {
 
 	for(var i = 0; i < apps.length; i++) {
 		app = apps[i];
-		app.id = articleCounter++;
 		this.dummyData[this.dummyData.length] = app;
 	}
 	callback(null, apps);
 };
 /* Lets bootstrap with dummy data */
-new ArticleProvider().save([{
-	id : articleCounter++,
-	name : 'Test App',
-	blurb: 'Please ignore.',
-	download: {
-		windows: 'http://www.yahoo.com',
-		mac: 'http://www.google.com',
-		other: 'http//www.askjeeves.com',
+new ArticleProvider().save([
+	{
+		name : 'Test App',
+		blurb: 'Please ignore.',
+		download: {
+			windows: 'http://www.yahoo.com',
+			mac: 'http://www.google.com',
+			other: 'http//www.askjeeves.com',
+		},
+		icon: '/images/wut.png',
+		info: 'Blah, blah, blah. Yada, yada, yada.',
 	},
-	icon: '/images/wut.png',
-	info: 'Blah, blah, blah. Yada, yada, yada.',
-}], function(error, articles) {
+	{
+		name : 'Notepad++',
+		blurb: 'All purpose text-editing sweetness.',
+		download: {
+			windows: 'http://download.tuxfamily.org/notepadplus/6.1/npp.6.1.Installer.exe',
+			mac: 'http://notepad-plus-plus.org/download/v6.1.html',
+			other: 'http://notepad-plus-plus.org/download/v6.1.html',
+		},
+		icon: '/images/npp.png',
+		info: 'Much better than Notepad.',
+	}
+], function(error, articles) {
 });
 
 exports.ArticleProvider = ArticleProvider;
