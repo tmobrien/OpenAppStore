@@ -8,7 +8,6 @@ var express = require('express')
 
 var ArticleProvider = require('./public/javascripts/articleprovider-memory').ArticleProvider;
 
-
 var app = module.exports = express.createServer();
 
 // Configuration
@@ -34,18 +33,34 @@ app.configure('production', function(){
 // Routes
 
 var articleProvider = new ArticleProvider();
+function OS(ua) {
+	if (typeof(ua) === 'undefined')
+		return 'other';
+	
+	var windows = /win/i;
+	var mac = /mac/i;
+	
+	if (ua.match(windows))
+		return 'windows';
+	else if (ua.match(mac))
+		return 'mac';
+	else
+		return 'other';
+}
 
 app.get('/', function(req,res) {
 	articleProvider.findAll(function(error, docs) {
 		res.render('index.jade', {locals: {
 			title: 'Toolshed',
-			apps: docs
+			apps: docs,
+			os: OS(req.headers['user-agent']),
 			}
 		});
 	});
 });
 
 app.get('/blog/new', function(req, res) {
+
 	res.render('newblog.jade', { locals: {
 		title: 'New Post'
 	}});
