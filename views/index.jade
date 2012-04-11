@@ -1,6 +1,4 @@
-header#top
-	#header_logo Toolshed
-	#slogan Useful. Free. Tools.
+include global/header
 
 #content
 	-each app in apps
@@ -20,8 +18,4 @@ header#top
 			.mosaic-backdrop
 				img(src="#{app.icon}")
 
-footer#bottom &copy 2012 Taylor O'Brien
-
-script(src='//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
-script(src='/javascripts/mosaic.1.0.1.min.js')
-script(src='/javascripts/main.js')
+include global/footer
