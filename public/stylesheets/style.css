@@ -84,10 +84,18 @@
 body {
   font-family: CabinRegular;
   font-size: 16px;
+  background-color: #eee;
 }
 #header_logo {
   font-family: FFFTusjBold;
   font-size: 64px;
+  display: inline;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+#slogan {
+  display: inline;
+  margin-left: 20px;
 }
 #content {
   width: 670px;
