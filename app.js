@@ -6,6 +6,9 @@
 var express = require('express')
   , routes = require('./routes');
 
+var ArticleProvider = require('./public/javascripts/articleprovider-memory').ArticleProvider;
+
+
 var app = module.exports = express.createServer();
 
 // Configuration
@@ -30,7 +33,14 @@ app.configure('production', function(){
 
 // Routes
 
+var articleProvider = new ArticleProvider();
+
 app.get('/', routes.index);
+// app.get('/', function(req,res) {
+	// articleProvider.findAll(function(error, docs) {
+		// res.send(docs);
+	// });
+// });
 
 app.listen(3000, function(){
   console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
