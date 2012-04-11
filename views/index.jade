@@ -1,2 +1,20 @@
-h1= title
-p Welcome to #{title}
+header#top
+	#header_logo Toolshed
+	#slogan Useful. Free. Tools.
+
+#content
+	-each app in apps
+		.mosaic-block.bar
+			.mosaic-overlay
+				.details
+					span.appname #{app.name}
+					p #{app.blurb}
+					p More Info
+					a.button.mosaic-button(href="#{app.download}") Download
+			.mosaic-backdrop
+				img(src="#{app.icon}")
+
+footer#bottom &copy 2012 Taylor O'Brien
+
+script(src='//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
+script(src='/javascripts/mosaic.1.0.1.min.js')

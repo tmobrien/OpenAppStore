@@ -1,50 +1,45 @@
 var articleCounter = 1;
-
-ArticleProvider = function(){};
+ArticleProvider = function() {
+};
 ArticleProvider.prototype.dummyData = [];
 
 ArticleProvider.prototype.findAll = function(callback) {
-  callback( null, this.dummyData )
+	callback(null, this.dummyData)
 };
 
 ArticleProvider.prototype.findById = function(id, callback) {
-  var result = null;
-  for(var i =0;i<this.dummyData.length;i++) {
-    if( this.dummyData[i]._id == id ) {
-      result = this.dummyData[i];
-      break;
-    }
-  }
-  callback(null, result);
+	var result = null;
+	for(var i = 0; i < this.dummyData.length; i++) {
+		if(this.dummyData[i]._id == id) {
+			result = this.dummyData[i];
+			break;
+		}
+	}
+	callback(null, result);
 };
 
-ArticleProvider.prototype.save = function(articles, callback) {
-  var article = null;
+ArticleProvider.prototype.save = function(apps, callback) {
+	var app = null;
 
-  if( typeof(articles.length)=="undefined")
-    articles = [articles];
+	if( typeof (apps.length) === "undefined")
+		apps = [apps];
 
-  for( var i =0;i< articles.length;i++ ) {
-    article = articles[i];
-    article._id = articleCounter++;
-    article.created_at = new Date();
-
-    if( article.comments === undefined )
-      article.comments = [];
-
-    for(var j =0;j< article.comments.length; j++) {
-      article.comments[j].created_at = new Date();
-    }
-    this.dummyData[this.dummyData.length]= article;
-  }
-  callback(null, articles);
+	for(var i = 0; i < apps.length; i++) {
+		app = apps[i];
+		app.id = articleCounter++;
+		this.dummyData[this.dummyData.length] = app;
+	}
+	callback(null, apps);
 };
-
 /* Lets bootstrap with dummy data */
-new ArticleProvider().save([
-  {title: 'Post one', body: 'Body one', comments:[{author:'Bob', comment:'I love it'}, {author:'Dave', comment:'This is rubbish!'}]},
-  {title: 'Post two', body: 'Body two'},
-  {title: 'Post three', body: 'Body three'}
-], function(error, articles){});
+new ArticleProvider().save([{
+	id : articleCounter++,
+	name : 'Test App',
+	blurb: 'Please ignore.',
+	download: 'http://www.google.com',
+	icon: '/images/wut.png',
+	info: 'Blah, blah, blah. Yada, yada, yada.',
+}], function(error, articles) {
+});
 
 exports.ArticleProvider = ArticleProvider;
