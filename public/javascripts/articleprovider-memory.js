@@ -36,7 +36,11 @@ new ArticleProvider().save([{
 	id : articleCounter++,
 	name : 'Test App',
 	blurb: 'Please ignore.',
-	download: 'http://www.google.com',
+	download: {
+		windows: 'http://www.yahoo.com',
+		mac: 'http://www.google.com',
+		other: 'http//www.askjeeves.com',
+	},
 	icon: '/images/wut.png',
 	info: 'Blah, blah, blah. Yada, yada, yada.',
 }], function(error, articles) {
