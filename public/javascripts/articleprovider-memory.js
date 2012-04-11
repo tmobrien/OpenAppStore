@@ -25,8 +25,7 @@ ArticleProvider.prototype.save = function(apps, callback) {
 		apps = [apps];
 
 	for(var i = 0; i < apps.length; i++) {
-		app = apps[i];
-		this.dummyData[this.dummyData.length] = app;
+		this.dummyData[this.dummyData.length] = apps[i];
 	}
 	callback(null, apps);
 };
