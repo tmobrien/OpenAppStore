@@ -93,3 +93,8 @@ body {
   width: 670px;
   margin: 100px auto;
 }
+#bottom {
+  margin-top: 800px;
+  width: 800px;
+  margin-left: auto;
+}
