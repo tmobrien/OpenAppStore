@@ -5,4 +5,9 @@ $(function() {
 		animation: 'slide',
 		speed: 150,
 	});
+	
+	$('#appsubmit').click(function(e) {
+		e.preventDefault();
+		$('#addform').submit();
+	})
 });

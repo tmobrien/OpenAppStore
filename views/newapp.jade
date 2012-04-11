@@ -1,6 +1,6 @@
 include global/header
 
-form(method="post")
+form#addform(method="post")
 	div
 		div
 			span Name :
@@ -23,7 +23,6 @@ form(method="post")
 		div
 			span Info :
 			textarea(name="info", rows=20)
-		#appsubmit
-			input(type="submit", value="Submit")
+		a.button#appsubmit() Submit
 
 include global/footer
