@@ -1,5 +1,10 @@
+mixin link(id, href, label)
+	li
+		a(href="#{href}", id="#{id}") #{label}
+
 header#top
-	#header_logo Toolshed
-	#slogan Useful. Free. Tools.
-	a#search() Search
-	a#addApp(href="/submitapp") Add App
+	a#header_logo(href="/") Toolshed
+	nav
+		ul.navlist
+			mixin link('search','','Search')
+			mixin link('addApp','/submitapp','Add App')

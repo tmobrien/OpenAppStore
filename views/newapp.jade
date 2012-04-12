@@ -9,16 +9,15 @@ mixin field(type, name, label)
 include global/header
 
 form#addform(method="post")
-	div
-		ul
-			mixin field('text', 'name', 'Name')
-			mixin field('text', 'blurb', 'Blurb')
-			mixin field('text', 'download-windows', 'Download (Windows)')
-			mixin field('text', 'download-mac', 'Download (Mac)')
-			mixin field('text', 'download-other', 'Download (Other)')
-			mixin field('text', 'icon', 'Icon')
-			mixin field('textarea', 'info', 'Info')
+	ul
+		mixin field('text', 'name', 'Name')
+		mixin field('text', 'blurb', 'Blurb')
+		mixin field('text', 'download-windows', 'Download (Windows)')
+		mixin field('text', 'download-mac', 'Download (Mac)')
+		mixin field('text', 'download-other', 'Download (Other)')
+		mixin field('text', 'icon', 'Icon')
+		mixin field('textarea', 'info', 'Info')
 
-		a.button#appsubmit() Submit
+	a.button#appsubmit() Submit
 
 include global/footer

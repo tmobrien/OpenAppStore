@@ -98,25 +98,44 @@ body
 	color #eee
 
 #top
-	width 1340px
+	width 670px
 	margin-top 10px
 	margin-bottom 10px
 	margin-left auto
 	margin-right auto
+	position relative
+	nav
+		background-color #272727
+		height 25px
+		line-height 25px
+		border-radius 4px
+		.navlist
+			li
+				display inline
+				list-style-type none
+				padding-right 20px
+				a, a:visited
+					text-decoration none
+					color #eee
+					&:hover
+						color #FFDA00
+					
 	
 #header_logo
+#header_logo:visited
 	font-family FFFTusjBold
 	font-size 72px
 	display inline
 	margin-left 4px
 	margin-right 4px
-
-#slogan
-	display inline
-	margin-left 20px
+	text-decoration none
+	color #eee
+	&:active
+		color #FFDA00
+	
 
 #content
-	width 1340px
+	width 670px
 	margin-left auto
 	margin-right auto
 
@@ -126,6 +145,9 @@ body
 	margin-left auto
 
 #addform
+	width 670px
+	margin-left auto
+	margin-right auto
 	ul
 		margin 0
 		padding 0
