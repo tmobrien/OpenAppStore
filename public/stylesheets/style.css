@@ -150,9 +150,13 @@ body {
   padding: 0;
   list-style: none;
 }
-#addform ul label {
+#addform ul .field {
   display: block;
   float: left;
+  width: 100%;
+}
+#addform ul .field label {
+  display: inline-block;
   margin-right: 10px;
   text-align: right;
   width: 180px;
@@ -160,5 +164,5 @@ body {
   font-size: 15px;
 }
 #appsubmit {
-  margin-left: 190px;
+  margin-left: 196px;
 }

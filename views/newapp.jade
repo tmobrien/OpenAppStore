@@ -1,10 +1,16 @@
 mixin field(type, name, label)
 	li
-		<label for="#{name}">#{label}</label>
-		if type == 'textarea'
-			textarea(name="#{name}", id="#{name}", rows=20)
-		else
-			input(type=type, name="#{name}", id="#{name}")
+		.field
+			if type != 'submit'
+				<label for="#{name}">#{label}</label>
+			else
+				<label></label>
+			if type == 'textarea'
+				textarea(name="#{name}", id="#{name}", rows=20)
+			else if type == 'submit'
+				a.button(id="#{name}")#{label}
+			else
+				input(type=type, name="#{name}", id="#{name}")
 
 include global/header
 
@@ -17,7 +23,6 @@ form#addform(method="post")
 		mixin field('text', 'download-other', 'Download (Other)')
 		mixin field('text', 'icon', 'Icon')
 		mixin field('textarea', 'info', 'Info')
-
-	a.button#appsubmit() Submit
+		mixin field('submit','appsubmit','Submit')
 
 include global/footer
