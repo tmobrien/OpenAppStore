@@ -4,7 +4,7 @@ mixin field(type, name, label)
 			if type != 'submit'
 				<label for="#{name}">#{label}</label>
 			else
-				<label></label>
+				<label>&nbsp;</label>
 			if type == 'textarea'
 				textarea(name="#{name}", id="#{name}", rows=20)
 			else if type == 'submit'
