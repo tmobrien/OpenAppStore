@@ -156,6 +156,7 @@ body {
   width: 100%;
 }
 #addform ul .field label {
+  vertical-align: top;
   display: inline-block;
   margin-right: 10px;
   text-align: right;
