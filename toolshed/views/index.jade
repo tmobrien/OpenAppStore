@@ -1,0 +1,21 @@
+include global/header
+
+#content
+	-each app in apps
+		.mosaic-block.bar
+			.mosaic-overlay
+				.details
+					span.appname #{app.name}
+					p #{app.blurb}
+					p More Info
+					case os
+						when 'windows'
+							a.button.mosaic-button(href="#{app.download.windows}") Download
+						when 'mac'
+							a.button.mosaic-button(href="#{app.download.mac}") Download
+						default
+							a.button.mosaic-button(href="#{app.download.other}") Download
+			.mosaic-backdrop
+				img(src="#{app.icon}")
+
+include global/footer
