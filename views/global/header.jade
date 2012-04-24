@@ -1,10 +1,17 @@
-mixin link(id, href, label)
-	li
-		a(href="#{href}", id="#{id}") #{label}
-
 header#top
 	a#header_logo(href="/") Toolshed
 	nav
 		ul.navlist
-			mixin link('search','','Search')
-			mixin link('addApp','/submitapp','Add App')
+			li
+				a(href="", id="search") Search
+			li
+				a(href="", id="categories") Categories
+				ul.subnav
+					li
+						a(href="", id="cat-web") Web
+					li
+						a(href="", id="cat-dev") Development
+					li
+						a(href="", id="cat-util") Utilities
+			li
+				a(href="/submitapp", id="addApp") Add App
